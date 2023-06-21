@@ -1,16 +1,16 @@
-# README
+# shield
 
 ## 默认要求
 
 项目根目录放置 `setup.py` 和 `app.py` 文件，setup.py 用于构建扩展模块，app 作为模块调用启动服务，如 `python -m app`
 
 
-## 安装python环境
+## Docker构建打包
 
 ```
-sudo add-apt-repository ppa:deadsnakes/ppa
-sudo apt-get update
-apt-get install python3.11 python3.11-dev
+docker build -t py_shield .
+
+docker run --rm py_shield
 ```
 
 ## 编译和链接
@@ -32,4 +32,6 @@ apt-get install python3.11 python3.11-dev
 
 ## 生成构建阶段需要的依赖文件
 
+```
 pipenv requirements > requirements-build.txt
+```
